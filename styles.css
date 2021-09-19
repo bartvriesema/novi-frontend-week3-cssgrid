@@ -1,1 +1,63 @@
 /*Maak hier jouw CSS!*/
+
+.grid-container {
+    background-color: hsl(25, 18%, 44%);
+    display: grid;
+    grid-gap: 16px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px auto 50px 50px 50px 50px 50px;
+    grid-template-areas:
+            "header"
+            "content-b"
+            "content-c"
+            "aside-d"
+            "aside-e"
+            "."
+            "footer";
+}
+
+.grid-item {
+    background-color: hsl(327, 13%, 73%);
+    font-family: "Avenir Next", sans-serif;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-header {
+    grid-area: header;
+}
+
+.grid-content-b {
+    grid-area: content-b;
+}
+
+.grid-content-c {
+    grid-area: content-c;
+}
+
+.grid-aside-d {
+    grid-area: aside-d;
+}
+
+.grid-aside-e {
+    grid-area: aside-e;
+}
+
+.grid-footer {
+    grid-area: footer;
+}
+
+@media screen and (min-width: 576px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 50px 190px 100px auto 50px;
+        grid-template-areas:
+                "header content-c content-c"
+                "content-b content-c content-c"
+                "content-b aside-e aside-d"
+                "content-b aside-e ."
+                "footer footer footer";
+    }
+}
